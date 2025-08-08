@@ -1,0 +1,75 @@
+1. List down exisiting database - SELECT dataname FROM pg_database; or \l
+2. change a database  - \c <db_name>;
+2.1. \dt -> list of relations
+2.2. \dv -> check view table
+3. Deleting a database - DROP DATABASE <db_name>;
+4. create database - CREATE DATABASE PERSOBDB;
+5. CREATE TABLE - 
+CREATE TABLE PERSON (
+id INT,
+name VARCHAR(100),
+city VARCHAR(100)
+);
+6. table describe - \d table_name;
+7. Insert data - 
+INSERT INTO person(id, name,city)
+VALUES(101,'Raju','Delhi');
+8. Read data - Select * From person or SELECT name from person;
+9. Update data
+UPDATE person
+SET name = 'Riya'
+WHERE id=102;
+
+10. Most Widely used are
+
+Numeric - Int Double Float Decimal
+String - VARCHAR
+DATE - DATE
+Boolean -Boolean 
+
+11. DATA REFINING PROCESS -> CLAUSES
+12. JOins -> Join Operation is used to combine rows from two or more tables based on a related column between them.
+    1. Inner Join
+    2. Cross Join
+    3. Left Join
+    4. Right join
+
+. Where
+. Distinct
+. Order By
+. limit
+. lIKE
+
+12. AGGREEGRATE
+   COUNT, SUM, AVG , MIN , MAX
+
+13. GROUP BY
+
+14. FUNTION String-> CONCAT,CONCAT_WS, SUBSTR,LEFT,RIGHT,LENGHT,UPPER,LOWER,TRIM,LTRIM,RTRIM,REPLACE,POSISTION,STRING_AGG
+
+15 REVISION ->
+ 1. Find Different type of department in database ? 
+2. Display record with high-low salary ? -> select * from employees order by salary DESC;
+3. How to see only top 3 records from a table ? -> select * from employees limit 3;
+4. Show records where first name start with letter 'A' ? -> select * from employees LIKE 'A%';
+5. Show records where length of the lname is 4 character ? -> SELECT * from employees Like '____' ;
+
+6. Find total no. of employees in database ? -> select count(emp_id) from employees;
+7. Find no. of employees in each department ?-> select dept,count(fname) from employees group by dept;
+8. find lowest salary paying ? -> select min(salary) from employees;
+9. find highest salary paying ?-> select max(salary) from employees;
+10. find total salary paying in Loan departpartment ?-> select sum(salary) from employees where dept='loan';
+11. Average salary paying in each department ? ->select avg(salary), dept from employees group by dept;
+ 
+12. CReate a one to many and many to many relationship in a shopping store context using four tables:
+    . Customer
+    . orders
+    . products
+    . order_items
+
+include a price column in the products table and display the relationship between customers and their orders.along with the details of the products in each order.
+
+13. view
+14. Stored Routine
+15. Window function
+16.TREGGERS
